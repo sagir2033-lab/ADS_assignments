@@ -1,5 +1,6 @@
 import java.util.*;
 public class Main {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -8,10 +9,21 @@ public class Main {
         Queue<String> billQueue = new LinkedList<>();
         Queue<BankAccount> requests = new LinkedList<>();
 
+        BankAccount[] arr = new BankAccount[3];
+
+        arr[0] = new BankAccount(1, "Aruzhan", 1000);
+        arr[1] = new BankAccount(2, "Ali", 2000);
+        arr[2] = new BankAccount(3, "Dana", 3000);
+
+        System.out.println();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i].display();
+        }
+
         while (true) {
-            System.out.println("\n1 - Bank");
-            System.out.println("2 - ATM");
-            System.out.println("3 - Admin");
+            System.out.println("\n1 - Enter Bank");
+            System.out.println("2 - Enter ATM");
+            System.out.println("3 - Admin Area");
             System.out.println("4 - Exit");
 
             int choice = sc.nextInt();
@@ -79,7 +91,6 @@ public class Main {
                     System.out.println("Added: " + bill);
                 }
             }
-
             else if (choice == 2) {
                 System.out.print("Enter username: ");
                 String name = sc.nextLine();

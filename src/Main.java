@@ -12,16 +12,18 @@ public class Main {
         BankAccount[] arr = new BankAccount[3];
 
         arr[0] = new BankAccount(1, "Aruzhan", 1000);
-        arr[1] = new BankAccount(2, "Ali", 2000);
+        arr[1] = new BankAccount(2, "Arman", 2000);
         arr[2] = new BankAccount(3, "Dana", 3000);
 
+        accounts.addAll(Arrays.asList(arr));
+
         System.out.println();
-        for (int i = 0; i < arr.length; i++) {
-            arr[i].display();
+        for (BankAccount acc : accounts) {
+            acc.display();
         }
 
         while (true) {
-            System.out.println("\n1 - Enter Bank");
+            System.out.println("1 - Enter Bank");
             System.out.println("2 - Enter ATM");
             System.out.println("3 - Admin Area");
             System.out.println("4 - Exit");
@@ -30,7 +32,7 @@ public class Main {
             sc.nextLine();
 
             if (choice == 1) {
-                System.out.println("\n1 - Add Account Request");
+                System.out.println("1 - Add Account Request");
                 System.out.println("2 - Deposit");
                 System.out.println("3 - Withdraw");
                 System.out.println("4 - Add Bill");
@@ -45,7 +47,6 @@ public class Main {
                     requests.add(new BankAccount(0, name, 0));
                     System.out.println("Request added!");
                 }
-
                 else if (bankChoice == 2) {
                     System.out.print("Enter username: ");
                     String name = sc.nextLine();
@@ -56,13 +57,12 @@ public class Main {
                             double amount = sc.nextDouble();
 
                             acc.balance += amount;
-                            history.push("Deposit " + amount + " to " + name);
+                            examples1.addDeposit(history, name, amount);
 
                             System.out.println("New balance: " + acc.balance);
                         }
                     }
                 }
-
                 else if (bankChoice == 3) {
                     System.out.print("Enter username: ");
                     String name = sc.nextLine();
@@ -74,7 +74,8 @@ public class Main {
 
                             if (acc.balance >= amount) {
                                 acc.balance -= amount;
-                                history.push("Withdraw " + amount + " from " + name);
+                                examples1.addWithdraw(history, name, amount);
+
                                 System.out.println("New balance: " + acc.balance);
                             } else {
                                 System.out.println("Not enough money!");
@@ -82,13 +83,8 @@ public class Main {
                         }
                     }
                 }
-
                 else if (bankChoice == 4) {
-                    System.out.print("Enter bill name: ");
-                    String bill = sc.nextLine();
-
-                    billQueue.add(bill);
-                    System.out.println("Added: " + bill);
+                    examples.addBill(billQueue, sc);
                 }
             }
             else if (choice == 2) {
@@ -101,9 +97,8 @@ public class Main {
                     }
                 }
             }
-
             else if (choice == 3) {
-                System.out.println("\n1 - Process account request");
+                System.out.println("1 - Process account request");
                 System.out.println("2 - Show all accounts");
                 System.out.println("3 - Show history");
                 System.out.println("4 - Process bill");
@@ -122,34 +117,23 @@ public class Main {
                         System.out.println("No requests!");
                     }
                 }
-
                 else if (adminChoice == 2) {
                     for (BankAccount acc : accounts) {
                         acc.display();
                     }
                 }
-
                 else if (adminChoice == 3) {
-                    if (!history.isEmpty()) {
-                        System.out.println("Last: " + history.peek());
-                    } else {
-                        System.out.println("No history");
-                    }
+                    examples1.showLast(history);
                 }
 
                 else if (adminChoice == 4) {
-                    if (!billQueue.isEmpty()) {
-                        System.out.println("Processing: " + billQueue.poll());
-                    } else {
-                        System.out.println("No bills!");
-                    }
+                    examples.processBill(billQueue);
                 }
 
                 else if (adminChoice == 5) {
-                    System.out.println("Bills: " + billQueue);
+                    examples.showBills(billQueue);
                 }
             }
-
             else if (choice == 4) {
                 System.out.println("Goodbye!");
                 break;

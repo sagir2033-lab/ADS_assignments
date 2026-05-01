@@ -37,7 +37,6 @@ public class Experiment {
             int[] sortedArray = randomArray.clone();
             sorter.advancedSort(sortedArray);
 
-            // Sorting tests
             System.out.println("Random array:");
             System.out.println("Bubble: " + measureSortTime(randomArray, "basic") + " ns");
             System.out.println("Merge: " + measureSortTime(randomArray, "advanced") + " ns");
@@ -46,7 +45,6 @@ public class Experiment {
             System.out.println("Bubble: " + measureSortTime(sortedArray, "basic") + " ns");
             System.out.println("Merge: " + measureSortTime(sortedArray, "advanced") + " ns");
 
-            // Search test
             int target = sortedArray[size / 2];
 
             System.out.println("Search (Binary): " +

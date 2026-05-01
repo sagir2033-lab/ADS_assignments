@@ -1,6 +1,5 @@
 public class Searcher {
 
-    // Binary Search (array must be sorted!)
     public int search(int[] arr, int target) {
         int left = 0, right = arr.length - 1;
 

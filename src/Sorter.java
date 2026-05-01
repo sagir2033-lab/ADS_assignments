@@ -2,7 +2,6 @@ import java.util.Random;
 
 public class Sorter {
 
-    // Bubble Sort (basic)
     public void basicSort(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
@@ -20,7 +19,6 @@ public class Sorter {
         }
     }
 
-    // Merge Sort (advanced)
     public void advancedSort(int[] arr) {
         mergeSort(arr, 0, arr.length - 1);
     }

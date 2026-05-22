@@ -1,3 +1,5 @@
+package Assignment4;
+
 public class Vertex {
     private int id;
 
@@ -11,6 +13,6 @@ public class Vertex {
 
     @Override
     public String toString() {
-        return "Vertex " + id;
+        return "Assignment4.Vertex " + id;
     }
 }

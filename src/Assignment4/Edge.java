@@ -1,3 +1,5 @@
+package Assignment4;
+
 public class Edge {
     private Vertex source;
     private Vertex destination;

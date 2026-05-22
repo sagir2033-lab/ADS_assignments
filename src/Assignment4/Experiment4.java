@@ -1,3 +1,5 @@
+package Assignment4;
+
 public class Experiment4 {
 
     public void runTraversals(Graph g) {
@@ -25,7 +27,7 @@ public class Experiment4 {
         for (int size : sizes) {
 
             System.out.println("\n============================");
-            System.out.println("Graph Size: " + size);
+            System.out.println("Assignment4.Graph Size: " + size);
             System.out.println("============================");
 
             Graph graph = createGraph(size);

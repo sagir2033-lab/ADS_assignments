@@ -1,3 +1,5 @@
+package Assignment4;
+
 import java.util.*;
 
 public class Graph {
@@ -20,7 +22,7 @@ public class Graph {
     }
 
     public void printGraph() {
-        System.out.println("Graph Structure:");
+        System.out.println("Assignment4.Graph Structure:");
 
         for (int vertex : adjacencyList.keySet()) {
             System.out.print(vertex + " -> ");

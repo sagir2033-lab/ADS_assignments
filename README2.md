@@ -82,7 +82,7 @@ Fast traversal
 
 Suitable for sparse graphs
 
-- Experiment.java
+-Experiment.java
 
 The Experiment class performs graph traversal experiments.
 

@@ -211,7 +211,7 @@ May consume stack memory
 
 Does not guarantee shortest path
 
-# E. Screenshots
+- E. Screenshots
 
 -Graph structure output:
 

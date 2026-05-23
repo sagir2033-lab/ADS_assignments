@@ -170,9 +170,9 @@ Execution Time Comparison
 
 | Graph Size | BFS Time (ns) | DFS Time (ns) |
 |------------|---------------|---------------|
-| 10 Vertices | 120000 | 100000 |
-| 30 Vertices | 240000 | 210000 |
-| 100 Vertices | 650000 | 610000 |
+| 10 Vertices | 751100 | 437200 |
+| 30 Vertices | 451200 | 540800 |
+| 100 Vertices | 1666900 | 966300 |
 
 
 - How does graph size affect BFS and DFS performance?
